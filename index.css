@@ -172,20 +172,35 @@ body {
     padding: 20px 0;
 }
 
-.social-links {
+.wrapper {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px; /* Adjust spacing between icons */
 }
 
-.social-icon {
+.icon {
     text-decoration: none;
-    color: #fff;
-    font-size: 1.2em;
+    color: #fff; /* Icon color */
+    position: relative;
+    font-size: 1.5em; /* Adjust icon size */
 }
 
-.social-logo {
-    width: 20px; /* Adjust size as needed */
-    height: auto;
-    vertical-align: middle; /* Aligns icon with text */
+.icon:hover .tooltip {
+    visibility: visible; /* Show tooltip on hover */
+    opacity: 1; /* Fade in effect */
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 100%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Tooltip background */
+    color: #fff; /* Tooltip text color */
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
 }
